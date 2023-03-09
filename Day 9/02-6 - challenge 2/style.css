@@ -31,9 +31,34 @@ h1 {
     margin-top: 0;
 }
 
+.hero2 {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+.third {
+    display:flex;
+    flex-direction: column;
+    width: 38%;
+    background-color: #136C72;
+    color:#FFF;
+    margin: 5% 0;
+    padding: 1em 1.25em;
+
+}
+.second {
+    width: 58%;
+    margin: 5% 0 5% 0;
+}
+
+.second h2 {
+    color:#136C72;
+}
+
 .container {
-    width: 80%;
-    max-width: 1100px;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -41,18 +66,23 @@ h1 {
     /* display: flex => flex container */
     display: flex;
     justify-content: space-between;
+
     
     /* can't use yet */
     /* gap: 100px; */
 }
 
 .col {
-    /* these are now flex items */
     width: 100%;
+    text-align: center;
+    margin-bottom: 2em;
 }
 
 .col + .col {
-    margin-left: 30px;
+    /* these are now flex items */
+    width: 100%;
+    text-align: center;
+    margin: 2em 0;
 }
 
 .hero {
@@ -62,11 +92,11 @@ h1 {
 }
 
 .hero__text { 
-    width: 62%;
+    width: 58%;
 }
 
 .hero__img {
-    width: 32%;
+    width: 38%;
     align-self: flex-start;
 }
 
