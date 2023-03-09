@@ -12,9 +12,9 @@ for(let i = 1; i <= n; i++) {
         output.push(x);
     }    
 }
-    console.log(output);
+    return output;    
 }
 
 
 
-fibonacciGenerator(20);
+console.log(fibonacciGenerator(10));
