@@ -108,3 +108,9 @@ p {
 .reverse {
     flex-direction: row-reverse;   
 }
+
+@media (max-width: 920px) {
+    .article-main {
+        flex-direction: column;
+    }
+}
