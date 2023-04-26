@@ -11,6 +11,15 @@ let green = document.getElementById('green');
 let yellow = document.getElementById('yellow');
 let blue = document.getElementById('blue');
 
+document.querySelectorAll(".btn").forEach(function(button) {
+    button.addEventListener("click", function() {
+        var color = button.getAttribute('id');
+        playerOutput.push(color);
+        playSound(color);
+        flashButton(button);
+    });
+});
+
 red.addEventListener('click', function() {
     playerOutput.push(buttonColors[0]);
     let audio = new Audio("sounds//red.mp3");
@@ -64,7 +73,7 @@ document.addEventListener("keydown", function gameStart() {
 
 
 function nextSequence() {
-    return Math.floor() * 4;
+  return Math.floor(Math.random() * 4);
 }
 
 
