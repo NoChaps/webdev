@@ -16,23 +16,7 @@ function nextSequence() {
   return Math.floor(Math.random() * 4);
 }
 
-function gameOver() {
-    document.querySelector("h1").innerHTML = "Game over! Your score: " + currentLevel + ". Press any key to restart the game."
-    let originalColor = document.body.style.backgroundColor;
-    document.body.style.backgroundColor = "red";
-    setTimeout(function() {
-        document.body.style.backgroundColor = originalColor;
-    }, 110);
-    gameRunning = false;
-    gameOverFlag = true;
-    document.querySelectorAll(".btn").forEach(function(button) {
-        button.disabled = true;
-    });
-    document.addEventListener("keydown", gameRestart);
-}
-
 function gameSequence() {
-    gameRunning = true;
     let nextColor = buttonColors[nextSequence()];
     gameOutput.push(nextColor);
     let lastIndex = gameOutput.length - 1;
@@ -43,13 +27,13 @@ function gameSequence() {
     }, 1000)
 
     setTimeout(function() {
-        gameRunning = false;
+        gameStartFlag = true;
     }, 1000);
 }
 
 document.querySelectorAll(".btn").forEach(function(button) {
     button.addEventListener("click", function() {
-        if (gameRunning || gameOverFlag || !gameStartFlag) return;
+        if (gameOverFlag || !gameStartFlag) return;
         let color = button.getAttribute('id');
         playerOutput.push(color);
         checkGame();
@@ -86,6 +70,20 @@ function checkGame() {
     else if (playerOutput[playerOutput.length - 1] !== gameOutput[playerOutput.length - 1]) {
         gameOver();
     }         
+}
+
+function gameOver() {
+    document.querySelector("h1").innerHTML = "Game over! Your score: " + currentLevel + ". Press any key to restart the game."
+    let originalColor = document.body.style.backgroundColor;
+    document.body.style.backgroundColor = "red";
+    setTimeout(function() {
+        document.body.style.backgroundColor = originalColor;
+    }, 110);
+    gameOverFlag = true;
+    document.querySelectorAll(".btn").forEach(function(button) {
+        button.disabled = true;
+    });
+    document.addEventListener("keydown", gameRestart);
 }
 
 function gameRestart() {
