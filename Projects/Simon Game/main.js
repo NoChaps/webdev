@@ -17,6 +17,7 @@ function nextSequence() {
 }
 
 function gameSequence() {
+    gameStartFlag = false;
     let nextColor = buttonColors[nextSequence()];
     gameOutput.push(nextColor);
     let lastIndex = gameOutput.length - 1;
