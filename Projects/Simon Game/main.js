@@ -69,7 +69,7 @@ function checkGame() {
         }
     }
     else if (playerOutput[playerOutput.length - 1] !== gameOutput[playerOutput.length - 1]) {
-        gameOver();
+        gameOver(); 
     }         
 }
 
