@@ -1,0 +1,160 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    background-color: #f7f7f7;
+    margin: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    transition: text-decoration 0.3s ease;    
+}
+
+header a:hover {
+    text-decoration: underline
+}
+
+section {
+    margin: auto;
+    min-height: 100px;
+    max-width: 500px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.time-display {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+.item-list {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.checkbox {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.checkbox label.strikethrough {
+    flex: 2;
+    font-size: 1.1rem;
+}
+
+.item form {
+    display: flex;
+    margin-top: 20px;
+}
+
+.item input[type="text"] {
+    flex: 2;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease;
+    width: 90%;
+}
+.item input[type="text"]:focus {
+    border-color: #333;
+}
+
+.item button[type="submit"] {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+}
+
+.item button[type="submit"]:hover {
+    background-color: #555;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Playfair Display', serif;
+
+}
+
+input[type=checkbox]:checked + label.strikethrough{
+  text-decoration: line-through;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    transition: text-decoration 0.3s ease;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+@keyframes flyIn {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.new-item {
+    animation: flyIn 0.5s ease-in-out;
+}

@@ -1,0 +1,38 @@
+<%- include("partials/header.ejs") %>
+
+<section>
+    <div class="time-display">
+        <h1>
+            <% const date = new Date();
+
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+            };%>
+            <%= date.toLocaleString('en-CA', options); %>
+        </h1>
+    </div>
+    <div class="item-list">
+        <ul>
+            <% for (let i = 0; i < locals.todaysItems.length; i++) { %>
+            <li class="<%= i === todaysItems.length - 1 ? 'new-item' : '' %>">
+                <div class="checkbox">
+                    <input type="checkbox">
+                    <label class="strikethrough"><%= todaysItems[i] %></label>
+                </div>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+    <div>
+        <form class="item" action="/" method="post">
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="list" value="value">+</button>
+        </form>
+    </div>
+</section>
+
+
+<%- include("partials/footer.ejs") %>

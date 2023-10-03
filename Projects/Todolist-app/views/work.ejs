@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+
+<section>
+    <div class="time-display">
+        <h1>
+            Work List
+        </h1>
+    </div>
+    <div class="item-list">
+        <ul>
+            <% for (let i = 0; i < locals.workItems.length; i++) { %>
+            <li class="<%= i === workItems.length - 1 ? 'new-item' : '' %>">
+                <div class="checkbox">
+                    <input type="checkbox">
+                    <label class="strikethrough"><%= workItems[i] %></label>
+                </div>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+    <div>
+        <form class="item" action="/work" method="post">
+            <input type="text" name="newWorkItem" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="list" value="value">+</button>
+        </form>
+    </div>
+</section>
+
+
+<%- include("partials/footer.ejs") %>
