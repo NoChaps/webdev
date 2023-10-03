@@ -1,38 +1,52 @@
 <%- include("partials/header.ejs") %>
+<div class="wrapper">
+    <header>
+        <div>
+            <a href="/" class="nav-link">Today's Tasks</a>
+        </div>
+        <div>
+            <a href="/work" class="nav-link">Work Tasks</a>
+        </div>
+    </header>
+    <body>
+        <section>
+            <div class="time-display">
+                <h1>
+                    <% const date = new Date();
 
-<section>
-    <div class="time-display">
-        <h1>
-            <% const date = new Date();
-
-            const options = {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-            };%>
-            <%= date.toLocaleString('en-CA', options); %>
-        </h1>
-    </div>
-    <div class="item-list">
-        <ul>
-            <% for (let i = 0; i < locals.todaysItems.length; i++) { %>
-            <li class="<%= i === todaysItems.length - 1 ? 'new-item' : '' %>">
-                <div class="checkbox">
-                    <input type="checkbox">
-                    <label class="strikethrough"><%= todaysItems[i] %></label>
-                </div>
-            </li>
-            <% } %>
-        </ul>
-    </div>
-    <div>
-        <form class="item" action="/" method="post">
-            <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
-            <button type="submit" name="list" value="value">+</button>
-        </form>
-    </div>
-</section>
-
-
+                    const options = {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                    };%>
+                    <%= date.toLocaleString('en-CA', options); %>
+                </h1>
+            </div>
+            <div class="item-list">
+                <ul>
+                    <% for (let i = 0; i < locals.todaysItems.length; i++) { %>
+                    <li class="<%= i === todaysItems.length - 1 ? 'new-item' : '' %>">
+                        <div class="checkbox">
+                            <input type="checkbox">
+                            <label class="strikethrough"><%= todaysItems[i] %></label>
+                        </div>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+            <div>
+                <form class="item" action="/" method="post">
+                    <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+                    <button type="submit" name="list" value="value">+</button>
+                </form>
+            </div>
+        </section>
+    </body>
+    <footer>
+        <p>
+            Copyright © <%= new Date().getFullYear() %>
+        </p>
+    </footer>
+</div>
 <%- include("partials/footer.ejs") %>
