@@ -19,7 +19,7 @@ app.get("/", async (req, res) => {
             query: "Toronto"
         } 
     });
-    res.render("index.ejs", {name: result.data.location.name, temp: result.data.current.temperature });
+    res.render("index.ejs", { name: result.data.location.name, temp: result.data.current.temperature, country: result.data.location.country, desc: result.data.current.weather_descriptions });
   } catch (error) {
     res.render("index.ejs", { content: (error.message) });
   }
@@ -35,7 +35,7 @@ app.post("/submit", async (req, res) => {
             query: city
         } 
     });
-    res.render("index.ejs", {name: result.data.location.name, temp: result.data.current.temperature });
+    res.render("index.ejs", { name: result.data.location.name, temp: result.data.current.temperature, country: result.data.location.country, desc: result.data.current.weather_descriptions });
   } catch (error) {
     res.render("index.ejs", { content: (error.message) });
   }
