@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Weather Channel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Titan+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+</head>
+
+<body>
+  <h1>Weather Forecast</h1>
+  <form action="/submit" method="POST">
+    <label for="city">Type in City:</label>
+    <input type="text" id="city" name="city" required>
+    <button type="submit">Submit</button>
+  </form>
+  <p>City: <%= name %></p>
+  <p>Current Temp: <%= temp %>°C</p>
+
+</body>
+
+</html>
