@@ -99,24 +99,54 @@ main {
 
 .portfolio-grid {
     display: grid;
-    grid-gap: 0.5rem;
-    padding: 1.5rem; 
+    gap: 0.5rem; 
     grid-template-columns: repeat(3, 1fr);
 }
 
 .portfolio-item {
     overflow: hidden;
-    background: linear-gradient(to top, hsl(0 0% 0% / 50%), transparent);
+    aspect-ratio: 1 / 1;
+    transition: 500ms transform ease-in-out;
 }
 
-.portfolio-item img {
-    position: relative;
-    display: block;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    transition: 500ms transform ease-in-out;
-    z-index: -1;   
+.portfolio-content {
+    background: 
+}
+
+.portfolio-item:nth-child(1) {
+    background-image: linear-gradient(to top, hsl(0 0% 0% / 50%), transparent), url("images/portfolio-image1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.portfolio-item:nth-child(2) {
+    background-image: linear-gradient(to top, hsl(0 0% 0% / 50%), transparent), url("images/portfolio-image2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.portfolio-item:nth-child(3) {
+    background-image: linear-gradient(to top, hsl(0 0% 0% / 50%), transparent), url("images/portfolio-image3.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.portfolio-item:nth-child(4) {
+    background-image: linear-gradient(to top, hsl(0 0% 0% / 50%), transparent), url("images/portfolio-image4.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.portfolio-item:nth-child(5) {
+    background-image: linear-gradient(to top, hsl(0 0% 0% / 50%), transparent), url("images/portfolio-image5.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.portfolio-item:nth-child(6) {
+    background-image: linear-gradient(to top, hsl(0 0% 0% / 50%), transparent), url("images/portfolio-image6.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .portfolio-item img:hover {
@@ -125,6 +155,8 @@ main {
 
 .portfolio-text {
     position: relative;
+    text-align: center;
+    min-height: 100vh;
 }
 
 h2 {
