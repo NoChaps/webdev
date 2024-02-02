@@ -109,54 +109,62 @@ main {
     transition: 500ms transform ease-in-out;
 }
 
-.portfolio-content {
-    background: 
+.portfolio-item:hover {
+    transform: scale(1.06);
 }
 
-.portfolio-item:nth-child(1) {
+.item-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+.portfolio-content {
+    overflow: hidden;
+}
+
+.portfolio-content:nth-child(1) .portfolio-item {
     background-image: linear-gradient(to top, hsl(0 0% 0% / 50%), transparent), url("images/portfolio-image1.jpg");
     background-size: cover;
     background-position: center;
 }
 
-.portfolio-item:nth-child(2) {
+.portfolio-content:nth-child(2) .portfolio-item{
     background-image: linear-gradient(to top, hsl(0 0% 0% / 50%), transparent), url("images/portfolio-image2.jpg");
     background-size: cover;
     background-position: center;
 }
 
-.portfolio-item:nth-child(3) {
+.portfolio-content:nth-child(3) .portfolio-item{
     background-image: linear-gradient(to top, hsl(0 0% 0% / 50%), transparent), url("images/portfolio-image3.jpg");
     background-size: cover;
     background-position: center;
 }
 
-.portfolio-item:nth-child(4) {
+.portfolio-content:nth-child(4) .portfolio-item{
     background-image: linear-gradient(to top, hsl(0 0% 0% / 50%), transparent), url("images/portfolio-image4.jpg");
     background-size: cover;
     background-position: center;
 }
 
-.portfolio-item:nth-child(5) {
+.portfolio-content:nth-child(5) .portfolio-item{
     background-image: linear-gradient(to top, hsl(0 0% 0% / 50%), transparent), url("images/portfolio-image5.jpg");
     background-size: cover;
     background-position: center;
 }
 
-.portfolio-item:nth-child(6) {
+.portfolio-content:nth-child(6) .portfolio-item{
     background-image: linear-gradient(to top, hsl(0 0% 0% / 50%), transparent), url("images/portfolio-image6.jpg");
     background-size: cover;
     background-position: center;
 }
 
-.portfolio-item img:hover {
-    transform: scale(1.06);
-}
-
 .portfolio-text {
     position: relative;
     text-align: center;
-    min-height: 100vh;
+    margin: 0;
 }
 
 h2 {
